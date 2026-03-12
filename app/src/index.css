@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #0a0a0a;
+  --color-foreground: #fafafa;
+  --color-bg: var(--color-background);
+  --color-fg: var(--color-foreground);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
