@@ -8,9 +8,9 @@ import (
 // Request wraps the HTTP request and auth/role config.
 type Request struct {
 	*http.Request
-	AllowedRoles    []string
-	AllowedUserIDs  []string
-	resolvedAuth    any
+	AllowedRoles   []string
+	AllowedUserIDs []string
+	resolvedAuth   any
 }
 
 // Context returns the request context.

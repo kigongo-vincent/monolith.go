@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/kigongo-vincent/monolith.go.git/internal/settings"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/settings"
 )
 
 func initSettings() *settings.Config {

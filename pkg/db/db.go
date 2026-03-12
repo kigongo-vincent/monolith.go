@@ -32,7 +32,7 @@ func (d *DBImpl) QueryRow(ctx context.Context, query string, args ...any) *sql.R
 	return d.DB.QueryRowContext(ctx, query, args...)
 }
 
-// New opens a database from driver and dsn (e.g. "sqlite3", "file:monolith.db").
+// New opens a database from driver and dsn (e.g. "sqlite", "file:monolith.db").
 func New(driver, dsn string) (*DBImpl, error) {
 	conn, err := sql.Open(driver, dsn)
 	if err != nil {

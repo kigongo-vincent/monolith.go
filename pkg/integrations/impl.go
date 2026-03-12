@@ -1,6 +1,5 @@
 package integrations
 
-
 // Integrations holds provider implementations (Storage, Payment, Mail, Maps).
 type Integrations struct {
 	storage Storage
@@ -50,14 +49,12 @@ type noopStorage struct{}
 
 func (n *noopStorage) Presign(_, _ string, _ int) (string, error) { return "", nil }
 func (n *noopStorage) Put(_, _ string, _ []byte) error             { return nil }
-func (n *noopStorage) Get(_, _ string) ([]byte, error)             { return nil, nil }
+func (n *noopStorage) Get(_, _ string) ([]byte, error)            { return nil, nil }
 
 type noopPayment struct{}
 
-func (n *noopPayment) Pay(PayDetails) (PayResult, error) { return PayResult{}, nil }
-func (n *noopPayment) Receive([]byte, string) (ReceiveResult, error) {
-	return ReceiveResult{}, nil
-}
+func (n *noopPayment) Pay(PayDetails) (PayResult, error)         { return PayResult{}, nil }
+func (n *noopPayment) Receive([]byte, string) (ReceiveResult, error) { return ReceiveResult{}, nil }
 
 type noopMail struct{}
 

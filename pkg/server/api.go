@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/kigongo-vincent/monolith.go.git/internal/db"
-	"github.com/kigongo-vincent/monolith.go.git/internal/integrations"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/db"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/integrations"
 )
 
 var defaultRouter = &Router{}
@@ -34,4 +34,3 @@ func Run(port string, database db.DB, ints *integrations.Integrations) {
 		log.Fatalf("server: %v", err)
 	}
 }
-

@@ -3,7 +3,7 @@ package settings
 import (
 	"os"
 
-	"github.com/kigongo-vincent/monolith.go.git/internal/envloader"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/envloader"
 )
 
 // Config holds all app configuration. Secrets from .env.

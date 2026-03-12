@@ -27,8 +27,7 @@ func (l *LocalStorage) Presign(bucket, key string, _ int) (string, error) {
 // Put writes data to root/bucket/key.
 func (l *LocalStorage) Put(bucket, key string, data []byte) error {
 	p := filepath.Join(l.root, bucket, key)
-	dir := filepath.Dir(p)
-	if err := os.MkdirAll(dir, 0755); err != nil {
+	if err := os.MkdirAll(filepath.Dir(p), 0755); err != nil {
 		return err
 	}
 	return os.WriteFile(p, data, 0644)

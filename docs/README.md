@@ -356,7 +356,7 @@ Get("/events", func(app App, db DB, integrations Integrations) Result {
 
 ## 10. CLI, deployment, benchmarking
 
-- **CLI**: On create, **Add React UI? (y/n)**. Commands: **create feature**, **create component**, **sync-client** (sync types to `app/src/types.ts`), **benchmark** (compare with Phoenix, Django, Spring Boot, Laravel, Rails).
+- **CLI**: Build with `make cli` or `go build -o bin/monolith ./cmd/monolith`. Run `./bin/monolith new <appname>` (prompts **Add React UI? (y/n)**) or `./bin/monolith new --ui <appname>`. Then `cd <appname> && go mod tidy && go run .` to run the app; with UI, `cd <appname>/app && npm install && npm run dev`. Commands: **create feature**, **create component**, **sync-client**, **benchmark** (stubbed).
 - **Deployment**: **Render** — backend as web service; SPA built and served as static assets. Use .env / Render env for secrets.
 - **Benchmarking**: Framework benchmark command and [SPECS.md](./SPECS.md) compare requests/sec and latency vs top frameworks.
 

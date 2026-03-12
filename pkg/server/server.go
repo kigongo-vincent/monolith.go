@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/kigongo-vincent/monolith.go.git/internal/app"
-	"github.com/kigongo-vincent/monolith.go.git/internal/db"
-	"github.com/kigongo-vincent/monolith.go.git/internal/integrations"
-	"github.com/kigongo-vincent/monolith.go.git/internal/result"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/app"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/db"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/integrations"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/result"
 )
 
 // Server holds router, db, and integrations.
@@ -51,8 +51,7 @@ func normalizePath(p string) string {
 }
 
 func writeResult(w http.ResponseWriter, res result.Result) {
-	status := res.Status()
-	w.WriteHeader(status)
+	w.WriteHeader(res.Status())
 	if res.IsError() {
 		writeJSON(w, map[string]string{"error": res.Body().(string)})
 		return

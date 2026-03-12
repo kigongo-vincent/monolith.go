@@ -5,11 +5,11 @@ import (
 
 	_ "modernc.org/sqlite"
 
-	"github.com/kigongo-vincent/monolith.go.git/internal/app"
-	"github.com/kigongo-vincent/monolith.go.git/internal/db"
-	"github.com/kigongo-vincent/monolith.go.git/internal/integrations"
-	"github.com/kigongo-vincent/monolith.go.git/internal/result"
-	"github.com/kigongo-vincent/monolith.go.git/internal/server"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/app"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/db"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/integrations"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/result"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/server"
 )
 
 func main() {

@@ -5,8 +5,8 @@ import "net/http"
 // Response wraps the HTTP response writer and cache config.
 type Response struct {
 	http.ResponseWriter
-	cacheTTL    int
-	cacheType   string
+	cacheTTL  int
+	cacheType string
 }
 
 // EnableCache enables response caching with TTL in seconds and cache type from settings.

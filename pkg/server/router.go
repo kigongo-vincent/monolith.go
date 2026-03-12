@@ -1,16 +1,15 @@
 package server
 
 import (
-	"github.com/kigongo-vincent/monolith.go.git/internal/app"
-	"github.com/kigongo-vincent/monolith.go.git/internal/db"
-	"github.com/kigongo-vincent/monolith.go.git/internal/integrations"
-	"github.com/kigongo-vincent/monolith.go.git/internal/result"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/app"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/db"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/integrations"
+	"github.com/kigongo-vincent/monolith.go.git/pkg/result"
 )
 
 // Handler is the standard handler signature.
 type Handler func(*app.App, db.DB, *integrations.Integrations) result.Result
 
-// route holds method, path prefix, and handler.
 type route struct {
 	method  string
 	path    string
@@ -41,7 +40,6 @@ func (r *Router) All(prefix string, fn func()) {
 	r.prefix = old
 }
 
-// find returns the handler for method and path, or nil.
 func (r *Router) find(method, path string) Handler {
 	for i := len(r.routes) - 1; i >= 0; i-- {
 		ro := r.routes[i]
